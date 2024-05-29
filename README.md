@@ -1,6 +1,6 @@
 # Wamumbi 
 
-This is a project for the Wamumbi Foundation to serve to propageate it's mission of touching hearts.
+This is a project for the Wamumbi Foundation to serve to propagate its mission of touching hearts.
 
 ## Table of Contents
 
