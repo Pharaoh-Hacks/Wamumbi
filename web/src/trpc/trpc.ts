@@ -12,6 +12,13 @@ const isAuth = middleware(async (opts) => {
     throw new TRPCError({ code: "UNAUTHORIZED" })
   }
 
+  if (
+    !Array.isArray(user.emailAddresses) ||
+    user.emailAddresses.length === 0 ||
+    !user.emailAddresses[0].emailAddress
+  ) {
+    throw new TRPCError({ code: "UNAUTHORIZED" })
+  }
   const dbUser = await prisma.user.findFirst({
     where: {
       email: user.emailAddresses[0].emailAddress,
