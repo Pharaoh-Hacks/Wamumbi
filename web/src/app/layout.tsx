@@ -21,22 +21,20 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+  children
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <TrpcProvider>
-      <ClerkProvider>
-        <html lang="en">
-          <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <TrpcProvider>
             <Navbar />
-            <main>{children}</main>
-          </body>
-        </html>
-      </ClerkProvider>
-    </TrpcProvider>
+            {children}
+          </TrpcProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
